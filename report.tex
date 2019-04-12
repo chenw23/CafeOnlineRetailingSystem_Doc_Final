@@ -1,0 +1,75 @@
+\documentclass[a4paper]{report}
+\pagestyle{headings}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage{multirow}
+\lstset{numbers=right}
+\lstset{breaklines}
+\title{Lab Report for Software Engineering course \newline
+ Lab 4: Starbubucks coffee online retailing system v3.0}
+\author{Wang, Chen\qquad Liu, Jiaxing\qquad Huang, Jiani\qquad Tang, Xinyue \\
+16307110064\qquad17302010049\qquad 17302010063\qquad 16307110476 \\
+School of Software\\
+Fudan University
+}
+\date{\today}
+\bibliographystyle{plain}
+\begin{document}
+\maketitle
+
+\tableofcontents
+\chapter{Improved skills on team collaboration}
+\section{Consistent git commit message styles}
+\subsection{Commit message requirements}
+The following are the requirements for the commit message in our team, this version of specifications are revised according to the commit message style recommendation from website \emph{Commit message guidelines · GitHub}\footnote{\url{https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53}}, \emph{How to Write a Git Commit Message}\footnote{\url{https://chris.beams.io/posts/git-commit/}}, \emph{How To Write a Good Commit Message}\footnote{\url{https://api.coala.io/en/latest/Developers/Writing_Good_Commits.html}} and the git commit message recommendation from one of the most authoritive open source project \textbf{GNOME} \emph{Guidelines for Commit Messages}\footnote{\url{https://wiki.gnome.org/Git/CommitMessages}}.
+\begin{enumerate}
+\item
+Only ASCII characters are allowed in the entire commit message
+\item
+All commit messages must start with one of the types identified in the following table, all words are lowercase
+\item
+It is best to have an associated work item, associated with the work item, followed by type, space \# number space followed by content, such as fix \#123 content
+\item
+The total number of characters recommended in the subject \emph{(note that it is the number of chars instead of the number of words)} is less than 50, and the maximum number is not more than 74 characters (including the previous type and item number, etc.)
+\item
+There is no need to add a period at the end of the head
+\item 
+After the type in the subject line, the first letter of the first word after the task number (if any) is capitalized and that indicates the beginning of a sentence
+\item
+Use the imperative tone in the subject sentence (although it is you who have actually done the work)
+\item
+The tense of the subject is the general present tense
+\item
+It is recommended that for commits involving complex modifications, body should be added in addition to the subject for further explanation. The method is as follows: break a new line and then write is the body, [do not follow the head without line break]
+\item
+For the body part of the commit message, there is no requirement other than writing Chinese, and it is relatively free. It is also recommended to write more than one line instead of one line in order to facilitate reading.
+\end{enumerate}
+
+\subsection{Types allowed in the subject of the commit message}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:test}Commit message types}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Type} & \textbf{Description} \\ \hline
+feat&A new feature\\ \hline
+fix&A bug fix\\ \hline
+wip&While working on a fix/feature\\ \hline
+docs&Documentation only changes\\ \hline
+style&\tabincell{c}{Changes that do not affect the meaning of the code \\(white-space, formatting, missing semi-colons, etc) }\\ \hline
+refactor&A code change that neither fixes a bug or adds a feature\\ \hline
+test&Adding missing tests \\ \hline
+chore&\tabincell{c}{Changes to the build process or auxiliary tools \\and libraries such as documentation generation}\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{thebibliography}{A}
+
+\bibitem{1}
+Wikipedia contributors. (2019, March 22). JUnit. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 14:53, April 1, 2019, from \url{https://en.wikipedia.org/w/index.php?title=JUnit&oldid=888928403}
+
+\end{thebibliography}
+\end{document} 
