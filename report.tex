@@ -80,8 +80,19 @@ chore&\tabincell{c}{Changes to the build process or auxiliary tools \\and librar
 \chapter{Implementation of the features}
 \section{Entities implementation}
 % Huang, Jiani's part below
-% 
-% 
+The implementation of entity package can be divided into two packages: the package of drinkEntity and the one of ingredients.
+\par To our attention, I apply this.getClass.getName() to simplify the constructor by avoiding inputting string every time.
+\subsection{drinkEntity}
+\par At present we have four different kinds of drinks: Cappuccino,Espresso,GreenTea and RedTea. But considering the possibilities of adding other kinds of coffee and tea and the rationality of logic, the abstract classes of Coffee and Tea are applied to construct the whole inheritance relationship.That is, Both Coffee and Tea will inherit the OrderItem class, and all specific kinds of coffee and tea will inherit the abstract classes of Coffee and Tea.
+\par We should pay attention to the constructor method of the different concrete classes. Since the initialization only need the different basic price of drinks, we only need to call the setPrice() method in constructor method. And all the generic method of these classes will be implemented in the parent class, the OrderItem class, such as cost() and size2price() methods.
+Thanks to the inheritance tree, in the size2price() method, we can use the instanceof keyword to simplify the judge of cup-size.
+\subsection{ingredientEntity}
+It is evident that the four concrete ingredients inherit the Ingredient class in dto package: chocolate, cream, milk and sugar. The constructor like the above drinkEntity's only need to set the price. 
+\subsection{OrderItem}
+ I add two methods: size2price and cost in this class in order to make all its subclasses use this method.
+
+
+
 % Huang, Jiani's part above
 \section{Order services implementation}
 % Tang, Xinyue's part below
