@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{subfiles}
 \usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
 \lstset{numbers=right}
 \lstset{breaklines}
 \title{Lab Report for Software Engineering course \newline
@@ -23,9 +24,50 @@ Fudan University
 \chapter{Overview of this lab}
 % Wang, Chen's part below
 \section{The Objectives of the Project}
+Through this experiment, we will experience the impact of demand changes on development work, experience the software project management functions provided by Huawei's development cloud platform DevCloud, and experience the rapid deployment of application services with SpringBoot.
 \section{Specifications of the Lab}
-\section{The division of work in the team}
+The company now hopes that the development team will develop an \textbf{Online Beverage Sales System} based on the existing system. Based on the existing system, in addition to the existing \textbf{basic functions}, the \textbf{new requirements} are as follows:
+\subsection{Add ingredients}
+\begin{itemize}
+\item
+To meet the needs of our customers, we offer a wide range of ingredients including: milk, chocolate, cream and sugar.
+\item
+The price of adding a unit of milk and chocolate is \$1.2 for the price of the beverage; the price of the unit of cream and sugar is \$1 for the price of the beverage; and a portion of the beverage can be added with a plurality of ingredients.
+\end{itemize}
+\subsection{Adding drinks}
+\begin{itemize}
+\item
+In order to meet the needs of customers, we offer a variety of drinks, and now we have added drinks, so that the system can provide coffee and tea sales, including cup type matching, ingredient addition, price calculation and so on.
+\item
+Coffee types now include: Espresso, Cappuccino; Tea varieties now include: Green Tea (GreenTea), Black Tea (RedTea).
+\end{itemize}
+\subsection{Price calculation}
+Due to the adjustment of ingredients and drinks, the price calculation of drinks is adjusted accordingly.
+\begin{itemize}
+\item
+The salesperson can choose the type of drink, the type of drink, or a variety of ingredients. The system will calculate the final price of the cup drink for the salesperson. The final price of the drink is calculated as follows: final price = drink price + drink cup type price + multiple ingredient price (unit: \$);
+\item
+The salesperson can select the number of cups under the premise of selecting a certain type of drink type. The system will calculate the final price of the multi-cup drink for the salesperson. The price is calculated as follows: multi-cup final price = single cup final price * cup number (unit :\$);
+\item
+Coffee and tea cups are currently divided into three types: large cup (3), medium cup (2), and small cup (1). Different cup types have different prices:
+\end{itemize}
+\begin{table}[htbp]
+\center
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor[HTML]{575C61} 
+{\color[HTML]{FFFFFF} \textbf{Large Cup}} & {\color[HTML]{FFFFFF} \textbf{Medium Cup}} & {\color[HTML]{FFFFFF}\textbf{Small Cup} } \\ \hline
+Coffee Price +  \$6&Coffee Price +  \$4&Coffee Price +  \$2\\\hline
+Tea Price +  \$5&Tea Price +  \$4&Tea Price +  \$2\\\hline
+\end{tabular}
+\end{table}
+\subsection{Promotional programs}
+In order to attract more customers at a more favorable price, the company now offers the following promotional strategies for different beverages selected by customers:
+\subsubsection{The first category: combination offer}
 
+\subsubsection{The second category: full reduction offer}
+\subsection{Basic price list}
+\section{The division of work in the team}
 \subsection{Division of work: Wang, Chen}
 \subsubsection{(Git username: \emph{Wang, Chen}; Student ID: \emph{16307110064})}
 He constructs the overall structure of the project, divides the entire workload into several parts so that each part can be finish the work separately. In addition, he draws the diagram of the entire project on the Huawei cloud platform that contains the parts like Epic, feature, story and tasks. Furthermore, he scratches the outline of how to implement the methods adopted in this project. At last, he summarized the general parts in the documentation and drafted some regulations for commit messages.
@@ -41,6 +83,30 @@ She implements the methods related to order processing, discount processing and 
 \subsection{Division: Liu, Jiaxing}
 \subsubsection{(Git username: \emph{jiaxingliu} Student ID: \emph{17302010049})}
 He tests the implementation in this project via the interface given by the teaching assistants.
+\section{Division of work for documentation}
+\subsection{Parts required in the documentation}
+In the requirement documentation of the lab, we are required to accomplish the following parts in this documentation:
+\begin{enumerate}
+\item Explain the design ideas of work item planning in this experiment(PLAN);
+\item Explain the design ideas of code implementation in this experiment(IMPLEMENT);
+\item Explain the understanding of demand changes and project management (project planning, defect management, etc.) in this experiment(UNDERSTAND);
+\item Explain the problems and solutions (if any) encountered in the implementation(PROBLEM).
+\end{enumerate}
+For the convenience of being noted, each requirement is labeled with a tag, which is used in the next part for mentioning.
+\subsection{Principal for each part of the documentation}
+\begin{table}[htbp]
+\center
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Tag} & \textbf{Writer} \\ \hline
+ PLAN&Wang, Chen\\ \hline
+ IMPLEMENT&Huang, Jiani\&Tang, Xinyue\\ \hline
+ UNDERSTAND&Wang, Chen\\ \hline
+ PROBLEM&Liu, Jiaxing\\ \hline
+\end{tabular}
+\end{table}
+
+
 
 % Wang, Chen's part below
 \chapter{Improved skills on team collaboration}
@@ -89,12 +155,12 @@ chore&\tabincell{c}{Changes to the build process or auxiliary tools \\and librar
 \end{tabular}
 \end{table}
 
-\chapter{Structure of the project}
+\chapter{Designed Ideas of work planning}
 % Wang, Chen's part below
 % 
 % 
 % Wang, Chen's part above
-\chapter{Implementation of the features}
+\chapter{Design ideas of implementation}
 \section{Entities implementation}
 % Huang, Jiani's part below
 The implementation of entity package can be divided into two packages: the package of drinkEntity and the one of ingredients.
@@ -116,6 +182,8 @@ It is evident that the four concrete ingredients inherit the Ingredient class in
 % 
 % 
 % Tang, Xinyue's part above
+
+\chapter{Understanding of demand changes}
 \chapter{Testing of the features}
 \section{Testing methods adopted}
 % Liu, Jiaxing's part below
@@ -129,6 +197,8 @@ It is evident that the four concrete ingredients inherit the Ingredient class in
 % 
 % 
 % Liu, Jiaxing's part above
+
+\chapter{Problems encountered and solutions}
 \begin{thebibliography}{A}
 
 \bibitem{1}
