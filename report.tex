@@ -179,8 +179,21 @@ It is evident that the four concrete ingredients inherit the Ingredient class in
 % Huang, Jiani's part above
 \section{Order services implementation}
 % Tang, Xinyue's part below
-% 
-% 
+\subsection{get total price of an order}
+add a new function getTotalPrice() to the Order Class,which calculates the total price of an order and return it back. 
+\par the logic of promotional functions.
+\subsection{rule1:Twenty percent off for every two cups of large espresso}
+count the number of large espresso in the order and save it in an int named by count,then the discount for espresso is (count/2)*0.2*20*2.
+\subsection{rule2:buy 3 get 1 for free in tea sales}
+count the number of GreenTea and RedTea and  save them in two ints named by countGreenTea and countRedTea.
+Then the number of tea for free is (countGreenTea + countRedTea)/4.
+To get largist discount, if the free cups of tea is less than the cups of RedTea(which is more expensive than GreenTea),
+the discount of tea is countRedTea * 18. else the discount of tea is countRedTea * 18 + (freeNumber - countRedTea) * 16.
+\subsection{rule3:The second cup of Cappuccino is half price}
+count the number of Cappuccino in the order and save it in an int named by countCappuccino,then the discount for Cappuccino is (countCappuccino / 2)*22*0.5.
+\subsection{compare the two kinds of promotion plan}
+calculate the discount in the two kinds of promotion plan separately and choose the larger one.
+
 % Tang, Xinyue's part above
 
 \chapter{Understanding of demand changes}
