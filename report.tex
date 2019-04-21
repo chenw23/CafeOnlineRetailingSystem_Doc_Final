@@ -163,18 +163,16 @@ chore&\tabincell{c}{Changes to the build process or auxiliary tools \\and librar
 \chapter{Design ideas of implementation}
 \section{Entities implementation}
 % Huang, Jiani's part below
-The implementation of entity package can be divided into two packages: the package of drinkEntity and the one of ingredients.
-\par To our attention, I apply this.getClass.getName() to simplify the constructor by avoiding inputting string every time.
+The implementation of entity package can be divided into one package and one class: the package of drinkEntity and the class Ingredient.
+\par At first, I apply this.getClass.getName() to simplify the constructor by avoiding inputting string every time. However, it is evident that the tedious information in className (the long package name) may cause other related problems. So in later modification, the constants created for drink-names in the class InfoConstant are used in the constructor method, which is also very simple and clear.
 \subsection{drinkEntity}
 \par At present we have four different kinds of drinks: Cappuccino,Espresso,GreenTea and RedTea. But considering the possibilities of adding other kinds of coffee and tea and the rationality of logic, the abstract classes of Coffee and Tea are applied to construct the whole inheritance relationship.That is, Both Coffee and Tea will inherit the OrderItem class, and all specific kinds of coffee and tea will inherit the abstract classes of Coffee and Tea.
 \par We should pay attention to the constructor method of the different concrete classes. Since the initialization only need the different basic price of drinks, we only need to call the setPrice() method in constructor method. And all the generic method of these classes will be implemented in the parent class, the OrderItem class, such as cost() and size2price() methods.
 Thanks to the inheritance tree, in the size2price() method, we can use the instanceof keyword to simplify the judge of cup-size.
 \subsection{ingredientEntity}
-It is evident that the four concrete ingredients inherit the Ingredient class in dto package: chocolate, cream, milk and sugar. The constructor like the above drinkEntity's only need to set the price. 
+At first I use four concrete ingredients inheriting the Ingredient class in dto package: chocolate, cream, milk and sugar. However, I realized that the concrete classes of ingredients actually are unnecessary. By using the API -- Hashmap and ArrayList, we can simplify the representation of different ingredients.
 \subsection{OrderItem}
- I add two methods: size2price and cost in this class in order to make all its subclasses use this method.
-
-
+ Two methods are added for the class: size2price and cost in this class in order to make all its subclasses use this method.
 
 % Huang, Jiani's part above
 \section{Order services implementation}
