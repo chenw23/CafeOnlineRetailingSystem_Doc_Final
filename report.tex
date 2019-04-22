@@ -209,7 +209,8 @@ Since the primary interface is the method \emph{pay} in class \emph{OrderService
         assertEquals(orderService.fullReduction(160), 30.0, 0.01);
 	\end{lstlisting}
 \par Testing for combination promotion is much more complicated and I need take three situations into account. The three situations are twenty percent off for every two cups of large espresso, buy 3 get 1 for free in tea sales and The second cup of Cappuccino is half price. So there are three methods to test them and the key part is check whether the return discount is right.
-\par Testing for the method pay is most important. 
+\par Testing for the method pay is most important. I should design two orders which will partly choose two promotion strategies. According to the order, I can guess what the discount may be. So the next step is to check it. And the two test methods are \emph{testPayWithFullReduction} and \emph{testPayWithCombination}.
+\par Well, testings for some important fucntions are over, but there may be some unexpected exceptions. I take in some exceptions
 
 % Liu, Jiaxing's part above
 \section{Testing results}
