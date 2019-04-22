@@ -198,9 +198,19 @@ calculate the discount in the two kinds of promotion plan separately and choose 
 \chapter{Testing of the features}
 \section{Testing methods adopted}
 % Liu, Jiaxing's part below
-% 
-% 
-% 
+Since the primary interface is the method \emph{pay} in class \emph{OrderServiceImpl}, the testing for the class is necessary. Given that the method is very complex and contains many factors, it's very nice to add a testing class for the class \emph{Order}.
+\subsection {Testing for class Order}
+\par To generate a legal order, I design a method \emph{getOrder}, which accepts some order items and return a order with an id generated with the date. And it's a helper method and it can reduce the repetition. Assuring that the total price computing is right is very important, so I design a method \emph{testGetTotalPriceOK} to test it, where I generate a order and check whether the return price is right. What's more, there may exist some unexpected exceptions. To be easy, I take three types of exception into account: the size of order items may be illegal, the order items may be null and the ingredients may be null. Well, there may be other unexpected exceptions. To make the  program much safer, I leave them in the other testing class. 
+\par Many people may think the testing for the class is unnecessary, but it's not true. I think only the implementation of base functions is convincing, can we make a larger programn well.
+\subsection {Testing for class OrderServiceImpl}
+\par Compared with the former test class, it is much more important to generate a good testing class for class \emph{OrderServiceImpl}. Since the logic of promotional functions can be devided into two parts: the one of full reduction and the one of combination promotion. To assure each function is implemented well, I design some method to test them partly.
+\par Testing for full reduction is very easy. I just generate a total price and pass it to the method \emph{fullReduction}. According the logic for full reduction, I can easily get the right discunt. So the next step is clear. I just need to check whether the return value is equal to the expected one. Here is the code:
+  \begin{lstlisting}[language=java]
+        assertEquals(orderService.fullReduction(160), 30.0, 0.01);
+	\end{lstlisting}
+\par Testing for combination promotion is much more complicated and I need take three situations into account. The three situations are twenty percent off for every two cups of large espresso, buy 3 get 1 for free in tea sales and The second cup of Cappuccino is half price. So there are three methods to test them and the key part is check whether the return discount is right.
+\par Testing for the method pay is most important. 
+
 % Liu, Jiaxing's part above
 \section{Testing results}
 % Liu, Jiaxing's part below
