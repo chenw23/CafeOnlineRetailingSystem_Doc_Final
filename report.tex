@@ -223,7 +223,15 @@ Testing is to assure that our program is essentially safe and creditable, so it 
 \subsection{Some good ideas}
 \par In total, the methods to be tested are well implemented, especially the using of stream and labdma statements. And they can help make the program more efficent and more pithy. What's more, the design of them is very nice. I think tang has very good skills of designing methods and it is very helpful for my testing. The relationship of each methods is very fine and clear.
 \chapter{Problems encountered and solutions}
+\section{the Improper Use of getClass().getName() Method}
+The first try to simplify the constructor method of entity classes proves to be infeasible.Since the whole project is composed of many organized packages, and this function will return a whole path string of the package name it belongs to, the class name we finally get will be long and confusing.
+\par Thanks to the help of Jiaxing Liu, in the final version we decided to still use the string constants of drink names in constructor method. Every time we construct a new kind of drink class, we need to add the drink name in the infoConstant class.
+\section{the Defect of Ingredient Class Design}
+For each kind of ingredient, a unique class is applied at first, which bring about the problem of the concrete classes with only a few attributes (a bad design). 
+\par Therefore, we use the key-value data structure -- map to represent each kind of ingredient, and arraylist for the total collection of ingredients added.
+
 \begin{thebibliography}{A}
+
 
 \bibitem{1}
 Wikipedia contributors. (2019, March 22). JUnit. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 14:53, April 1, 2019, from \url{https://en.wikipedia.org/w/index.php?title=JUnit&oldid=888928403}
