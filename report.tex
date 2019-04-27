@@ -158,7 +158,18 @@ chore&\tabincell{c}{Changes to the build process or auxiliary tools \\and librar
 \chapter{Designed Ideas of work planning}
 % Wang, Chen's part below
 % 
-% 
+
+There are two aspects to new requirements. One is the correctness of the original code, the other is the correctness of the new code. But this experiment is not entirely new development based on the original code, so there is no dedicated work item for the first point. For the new code part, considering the number of team members, we separated writing functional code from writing unit tests, avoiding the one-sided assumption of each member. Specifically, let one member set up the drinks storage class as a basis on which two other members work together to complete the new price calculation. This work plan is obtained.
+
+
+In this Lab, the work is divided according to the basic class realization, price calculation, discount calculation and test realization. Because essentially it is only a function of the pay method, so in this Lab, test work and development work are not integrated, but separated. This approach does not take advantage of the idea of driving test development, but it allows for increased communication between team members on DevCloud (more like a real development project), allowing us to maximize the use of DevCloud's project management and issue functionality on this project.
+
+
+
+This lab work item planning is mainly divided into two parts: commodity type storage and order price calculation. Commodity type storage: store some information about drinks in a reasonable way, mainly including drinks and ingredients, so the information about drinks and ingredients are packaged into categories for subsequent processing. Price calculation of orders: including the original price (excluding discount) and the final price calculation. At the same time, write test cases to test the price calculation may appear in a variety of circumstances.
+
+
+
 % Wang, Chen's part above
 \chapter{Design ideas of implementation}
 \section{Entities implementation}
@@ -195,6 +206,27 @@ calculate the discount in the two kinds of promotion plan separately and choose 
 % Tang, Xinyue's part above
 
 \chapter{Understanding of demand changes}
+
+
+This new addition to the demand for the new types of drinks and discount calculation. The impact of this change in project planning is to ensure that the original code is correct and that new functionality is added correctly. However, due to the particularity of this experiment, the operation of CSV was cancelled. Therefore, the original part of the code, such as the login and registration, was bound to change at the very beginning. Since there was no rigid requirement for this part in this requirement, the work in this part was cancelled in the project planning, and the new requirements were only developed. As for the defect management part, the strategy adopted is who finds who records, which is of great convenience for the later code inspection and can be implemented to specific personnel to solve the subsequent problems.
+
+
+
+Requirements change is a common problem in real development, sometimes it is the addition of new functions, and sometimes it is the total overthrow of a function again. Faced with such a situation, the design of the project will be particularly important, good design can easily solve these problems; On the other hand, if the design is not appropriate, resulting in code coupling is too strong, scalability is too bad, it will be difficult to cope with the change in requirements, resulting in the loss of time and manpower. Project management is essential when many people work together. A large project is decomposed into different blocks, which are respectively undertaken by different members. At the same time, establish work items and development tasks, and the development tasks are marked as pending, ongoing, testing and solving, etc., so as to effectively monitor the progress of the project and the work of each member, as well as effectively manage the defects of the project.
+
+
+
+
+
+The demand of lab has changed obviously compared with the last few times. For my part, due to the addition of ingredients and the increase in the types of drinks, as well as the change in the way of storing information related to drinks, the way of calculating the price is quite different from the previous one. Through this lab, I realized that the change of requirements is inevitable, so we must keep the good structure, style and modifiability of the code in the process of implementation, so that we can modify the code more conveniently when the requirements are changed later.
+
+
+
+Project planning is conducive to the logical thinking of the code, discussing the planning is to discuss the specific implementation of the code. Although the division of labor is different and the work is somewhat burdensome in the planning, at least this division of labor is logical and effective in my opinion, which has been proved to be the case. Defect management also made me realize that in the process of development, anyone's work is and others, which is closely linked with certain coupling, so there is a problem, need to deal with that part of the people and the corresponding communication, although we have WeChat can be directly said, but it will make records of trouble, so defects treatment is very good solve the problem, even after the problem again, can also go to previous administration reference before the situation to make corresponding analysis. This also facilitates the writing of the final document and the success of the test.
+
+
+
+
 \chapter{Testing of the features}
 \section{Testing methods adopted}
 % Liu, Jiaxing's part below
