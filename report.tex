@@ -162,6 +162,7 @@ For the body part of the commit message, there is no requirement other than writ
 \end{enumerate}
 
 \subsection{Types allowed in the subject of the commit message}
+
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \begin{table}[htbp]
 \centering
@@ -179,7 +180,26 @@ test&Adding missing tests \\ \hline
 chore&\tabincell{c}{Changes to the build process or auxiliary tools \\and libraries such as documentation generation}\\ \hline
 \end{tabular}
 \end{table}
-
+\section{API testing via Swagger}
+\subsection{The Swagger API testing tool: Swagger Inspector}
+Swagger is an open-source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services. While most users identify Swagger by the Swagger UI tool, the Swagger toolset includes support for automated documentation, code generation, and test-case generation. 
+\par
+Sponsored by SmartBear Software, Swagger has been a strong supporter of open-source software, and has widespread adoption. 
+\par
+With Swagger Inspector, we can validate our APIs without any kind of setup or desktop downloads. We need to start testing immediately right in your browser. Tests are auto-saved so you can access them anywhere, anytime. Our Huawei Cloud account allows us to curate collections of tests and pin important endpoints to remember for later.
+\section{Interface testing adopted in this project}
+\subsection{API test case design in this project}
+In this project, we designed the API test case shown in the following Figure \ref{1} configured on the Huawei Cloud platform. We sent a \emph{POST} request and then expected the price of the response.
+\begin{figure}
+\includegraphics[scale=0.4]{code.jpg}
+ \caption{API test case}\label{1}
+\end{figure}
+\subsection{API test result of the interface}
+The test result of the API testing is shown in the Figure \ref{2} below, which indicates that our project has passed the expected test cases.
+\begin{figure}
+\includegraphics[scale=0.7]{result.png}
+ \caption{API test result}\label{2}
+\end{figure}
 \chapter{Designed Ideas of work planning}
 % Wang, Chen's part below
 % 
