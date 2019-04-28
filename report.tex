@@ -64,9 +64,34 @@ Tea Price +  \$5&Tea Price +  \$4&Tea Price +  \$2\\\hline
 \subsection{Promotional programs}
 In order to attract more customers at a more favorable price, the company now offers the following promotional strategies for different beverages selected by customers:
 \subsubsection{The first category: combination offer}
-
+\begin{itemize}
+\item
+Big cup Espresso, 20 cups off 2 cups (base price discount, 3 cups, 2 cups, 20 fold, 4 cups, 20\% off, and so on)
+\item
+RedTea/GreenTea (total) buy 3 get 1 free (buy 4 get 1 free, buy 5 get 1 free, buy 6 get 2 free, and so on)
+\item 
+Half price of Cappucino 2nd cup (half price of base price, half price of 1 cup in 2 cups, half price of 2 cups in 4 cups, and so on)
+\end{itemize}
 \subsubsection{The second category: full reduction offer}
+\begin{itemize}
+\item
+All items are over \$100 minus 30\$ (over 200\$ minus 60\$ and so on)
+\end{itemize}
 \subsection{Basic price list}
+The basic price list is shown as the table below.
+
+\begin{table}[htbp]
+\center
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor[HTML]{575C61} 
+{\color[HTML]{FFFFFF} \textbf{Drink}} & {\color[HTML]{FFFFFF} \textbf{Basic Price}} \\ \hline
+Espresso&\$20\\\hline
+Cappuccino&\$22\\\hline
+GreenTea&\$16\\\hline
+RedTea&\$18\\\hline
+\end{tabular}
+\end{table}
 \section{The division of work in the team}
 \subsection{Division of work: Wang, Chen}
 \subsubsection{(Git username: \emph{Wang, Chen}; Student ID: \emph{16307110064})}
@@ -112,7 +137,7 @@ For the convenience of being noted, each requirement is labeled with a tag, whic
 \chapter{Improved skills on team collaboration}
 \section{Consistent git commit message styles}
 \subsection{Commit message requirements}
-The following are the requirements for the commit message in our team, this version of specifications are revised according to the commit message style recommendation from website \emph{Commit message guidelines · GitHub}\footnote{\url{https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53}}, \emph{How to Write a Git Commit Message}\footnote{\url{https://chris.beams.io/posts/git-commit/}}, \emph{How To Write a Good Commit Message}\footnote{\url{https://api.coala.io/en/latest/Developers/Writing_Good_Commits.html}} and the git commit message recommendation from one of the most authoritive open source project \textbf{GNOME} \emph{Guidelines for Commit Messages}\footnote{\url{https://wiki.gnome.org/Git/CommitMessages}}.
+The following are the requirements for the commit message in our team, this version of specifications are revised according to the commit message style recommendation from website \emph{Commit message guidelines · GitHub}\footnote{Github contributors. (2019, March 22). Commit message guidelines. In \emph{GitHub, Inc}. Retrieved 14:53, April 28, 2019, from \url{https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53}}, \emph{How to Write a Git Commit Message}\footnote{Chris Beams. (2014, August 31). How to Write a Git Commit Message. In \emph{Chris Beams}. Retrieved 14:59, April 28, 2019, from \url{https://chris.beams.io/posts/git-commit/}}, \emph{How To Write a Good Commit Message}\footnote{The coala Developers. (2018). How To Write a Good Commit Message. In \emph{coala 0.12.0.dev20180614080551 documentation}. Retrieved 14:56, April 28, 2019, from\url{https://api.coala.io/en/latest/Developers/Writing_Good_Commits.html}} and the git commit message recommendation from one of the most authoritive open source project \textbf{GNOME} \emph{Guidelines for Commit Messages}\footnote{ZeeshanAli. (2019, March 18). Guidelines for Commit Messages. In \emph{GNOME Wiki!}. Retrieved 13:56, April 28, 2019, from\url{https://wiki.gnome.org/Git/CommitMessages}}.
 \begin{enumerate}
 \item
 Only ASCII characters are allowed in the entire commit message
@@ -160,11 +185,11 @@ chore&\tabincell{c}{Changes to the build process or auxiliary tools \\and librar
 % 
 
 There are two aspects to new requirements. One is the correctness of the original code, the other is the correctness of the new code. But this experiment is not entirely new development based on the original code, so there is no dedicated work item for the first point. For the new code part, considering the number of team members, we separated writing functional code from writing unit tests, avoiding the one-sided assumption of each member. Specifically, let one member set up the drinks storage class as a basis on which two other members work together to complete the new price calculation. This work plan is obtained.
-
+\par
 
 In this Lab, the work is divided according to the basic class realization, price calculation, discount calculation and test realization. Because essentially it is only a function of the pay method, so in this Lab, test work and development work are not integrated, but separated. This approach does not take advantage of the idea of driving test development, but it allows for increased communication between team members on DevCloud (more like a real development project), allowing us to maximize the use of DevCloud's project management and issue functionality on this project.
 
-
+\par
 
 This lab work item planning is mainly divided into two parts: commodity type storage and order price calculation. Commodity type storage: store some information about drinks in a reasonable way, mainly including drinks and ingredients, so the information about drinks and ingredients are packaged into categories for subsequent processing. Price calculation of orders: including the original price (excluding discount) and the final price calculation. At the same time, write test cases to test the price calculation may appear in a variety of circumstances.
 
@@ -210,17 +235,17 @@ calculate the discount in the two kinds of promotion plan separately and choose 
 
 This new addition to the demand for the new types of drinks and discount calculation. The impact of this change in project planning is to ensure that the original code is correct and that new functionality is added correctly. However, due to the particularity of this experiment, the operation of CSV was cancelled. Therefore, the original part of the code, such as the login and registration, was bound to change at the very beginning. Since there was no rigid requirement for this part in this requirement, the work in this part was cancelled in the project planning, and the new requirements were only developed. As for the defect management part, the strategy adopted is who finds who records, which is of great convenience for the later code inspection and can be implemented to specific personnel to solve the subsequent problems.
 
-
+\par
 
 Requirements change is a common problem in real development, sometimes it is the addition of new functions, and sometimes it is the total overthrow of a function again. Faced with such a situation, the design of the project will be particularly important, good design can easily solve these problems; On the other hand, if the design is not appropriate, resulting in code coupling is too strong, scalability is too bad, it will be difficult to cope with the change in requirements, resulting in the loss of time and manpower. Project management is essential when many people work together. A large project is decomposed into different blocks, which are respectively undertaken by different members. At the same time, establish work items and development tasks, and the development tasks are marked as pending, ongoing, testing and solving, etc., so as to effectively monitor the progress of the project and the work of each member, as well as effectively manage the defects of the project.
 
 
-
+\par
 
 
 The demand of lab has changed obviously compared with the last few times. For my part, due to the addition of ingredients and the increase in the types of drinks, as well as the change in the way of storing information related to drinks, the way of calculating the price is quite different from the previous one. Through this lab, I realized that the change of requirements is inevitable, so we must keep the good structure, style and modifiability of the code in the process of implementation, so that we can modify the code more conveniently when the requirements are changed later.
 
-
+\par
 
 Project planning is conducive to the logical thinking of the code, discussing the planning is to discuss the specific implementation of the code. Although the division of labor is different and the work is somewhat burdensome in the planning, at least this division of labor is logical and effective in my opinion, which has been proved to be the case. Defect management also made me realize that in the process of development, anyone's work is and others, which is closely linked with certain coupling, so there is a problem, need to deal with that part of the people and the corresponding communication, although we have WeChat can be directly said, but it will make records of trouble, so defects treatment is very good solve the problem, even after the problem again, can also go to previous administration reference before the situation to make corresponding analysis. This also facilitates the writing of the final document and the success of the test.
 
