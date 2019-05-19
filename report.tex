@@ -53,7 +53,20 @@ Collaborative development based on Git, submit project documentation and code on
 
 \chapter{Detailed design for the implementation}
 
+%Huang Jiani 2019-5-20 below%
+\section{Switch Language Implementation}
+\par The switch of language will be mainly displayed in the user interface, so all the information that need to be multi-translated will be separately placed into  different constant files. In this iteration of implementation, we only instantiate the Chinese and English versions. And the correspondent service classes will use a typical mechanism called reflection to implement the switch of different constant language files.
+\par In the following two sections, the detailed design of constant files and language service classes will be respectively clarified.
+\subsection{Language Constant Files}
+\par The two constant files are positioned in the constant package. In these two files, all the variables (there are no methods) are qualified with public static final String since they are all constant strings.
+\par To our attention, all the necessary variables should have the same names in all the language files to maintain the availability of reflection.
+\subsection{Language Service Classes }
+\par To follow the idea of prototype development, all the concrete service classes should implement their corresponding interfaces. The interface make it clear what the service will implement and its parameters. The most notable design pattern in this class is single-instance pattern.
 
+\section{Switch Currency Implementation}
+\subsection{Currency Property Files}
+\subsection{Currency Service Classes}
+%Huang Jiani 2019-5-20 above%
 
 
 \chapter{Problems encountered in this project}
