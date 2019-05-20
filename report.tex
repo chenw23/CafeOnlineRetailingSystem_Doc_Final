@@ -37,6 +37,19 @@ Project management should be arranged based on the DevCloud platform, including 
 Issues in the development process need to be recorded and managed on DevCloud, including defect reports in integrated development;
 \par
 Collaborative development based on Git, submit project documentation and code on a team basis.
+
+\section{Background on the change of demand}
+Starbubucks's coffee shop has received a large amount of financing and decided to open branches in different countries and regions.
+\par
+In order to adapt to the habits of users in different regions, it is necessary to develop a project prototype with basic functions, and then customize the system for different regions.Customized development needs to consider the following factors:
+\subsection{Drink Customization}
+At least 2 beverages need to be customized for local features (beverages defined in Lab4 are system default beverages).
+\subsection{Currency change}
+We need to switch to the corresponding currency according to different countries and regions, for example, a cappuccino in China 20CNY, a cappuccino in the US \$3 (do not consider currency exchange).
+\subsection{Language change(localization)}
+The system needs to switch the system language to the language of the corresponding country and region according to the language of different countries and regions. The range of language switching is visible to all system users (sales personnel) and customers (beverage buyers). For example, when the system user inputs, the input content should be the language of the corresponding country and region; after the order is successful, the customer sees The transaction content should be switched to the language of the corresponding country and region.
+\subsection{Sales strategies}
+A good sales strategy can bring huge benefits, and the system's default sales strategy is the sales strategy defined in Lab4. Because sales strategies can change as external markets change, systems are required to add and remove sales strategies in a pluggable manner.
 \section{Specifications of the Lab}
 
 \chapter{Division of work for this lab}
