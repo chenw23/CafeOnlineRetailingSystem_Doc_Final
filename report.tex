@@ -50,8 +50,33 @@ We need to switch to the corresponding currency according to different countries
 The system needs to switch the system language to the language of the corresponding country and region according to the language of different countries and regions. The range of language switching is visible to all system users (sales personnel) and customers (beverage buyers). For example, when the system user inputs, the input content should be the language of the corresponding country and region; after the order is successful, the customer sees The transaction content should be switched to the language of the corresponding country and region.
 \subsection{Sales strategies}
 A good sales strategy can bring huge benefits, and the system's default sales strategy is the sales strategy defined in Lab4. Because sales strategies can change as external markets change, systems are required to add and remove sales strategies in a pluggable manner.
-\section{Specifications of the Lab}
 
+\section{Specifications of the Lab}
+The following requirements are to be met for the custom development factors described in the background in the previous section:
+\subsection{Drink Customization}
+Customize two beverages with reference to the previous lab implementation.
+\subsection{Currency change}
+There may be multiple currencies in different countries and regions. For example, Hong Kong can circulate Hong Kong dollars and Chinese Yuan, mainland China circulates Chinese Yuan, and the United States circulates US dollars. The prices of different currencies for the same item are different depending on the value of the product itself. The system needs to specify the corresponding price of the corresponding commodity for different currencies (the pricing of different currencies for each commodity, and the exchange rate pricing can be reasonably justified). Currently, the system only needs to support RMB and Hong Kong Dollar (HK\$).
+\subsection{Language change(localization)}
+Different countries and regions may have multiple official languages, and the system needs to switch between different languages according to different countries and regions. The system must be able to switch between English and Simplified Chinese.
+\subsection{Sales strategies}
+The sales strategy is added and deleted in a pluggable manner. The sales strategy in lab4 is the default sales strategy and cannot be deleted. The source of information for all sales strategies is order and system information (date and location). On the basis of lab4, the requirements of (1)(2)(3) and the pluggable components of the sales strategy can be regarded as the prototype of the project.Based on this prototype, add the following sales strategy:
+\begin{enumerate}
+\item
+When the time zone of the system is November 11th, the total price of all commodities (including all prices) will be 50\% off.
+\item
+When the order contains at least one tea item and at least one item of the Coffee category, the total price (including all prices) is 15\% off.
+\end{enumerate}
+
+\section{Additional precautions of this lab}
+\subsection{Switch interface of currency and language}
+The switching of currency and language can depend on a ``switch'', which is an abstraction rather than a concrete implementation, since the opening and closing of the switch may depend on different external conditions.
+\subsection{Prototype-based development}
+The addition and deletion of the sales strategy is based on the fact that the prototype of the project has been developed, and the sales strategy is added and deleted through the interface of the sales strategy provided by the prototype. When using the prototype, you can't modify the code of any prototype, and you can only perform secondary development on the basis of the prototype.
+\subsection{Methods for switch and pluggable components}
+The development of "switches" and pluggable components can refer to the relevant materials.
+\subsection{Freedom of change of the existing frameworks}
+In order to flexibly realize the four requirements in the previous sections above, it is encouraged that every team should design independently. The fields and method signatures in the framework code provided by the assistants in Lab4 can be modified. It should be emphasized that after the prototype is completed, it cannot be modified, and it can only be developed on the basis of the prototype.
 \chapter{Division of work for this lab}
 
 
