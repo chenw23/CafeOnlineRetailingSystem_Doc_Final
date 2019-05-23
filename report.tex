@@ -123,9 +123,11 @@ The prototype need to well represent the newly-added features that will be futur
 \par
 Should there be future concrete implementation on the futures above, the developers (our team members here) should only need to add new classes implementing the interfaces without modifying the existing interfaces.
 \section{Currency switch analysis}
-
-
-
+The requirements of currency switch has a lot to be further analyzed before concrete implementation. As the features of the project display, each drink and its corresponding ingredients have a price. The prices will be used in the order information and later be used to charge from the customers. However, different region has different currencies, while the drink item will also vary from one region to another. Therefore, the price of the order items should not be written directly into the code any more, which can lead more complexity to future feature extension. 
+\par
+Considering we are running a Spring Application, which allows a wide range of property resources lying in the \emph{resources} folder of the application with a file extension \emph{properties}, the price information of the order items are suitable to be stored in such places. 
+\par
+In such way, the price information of the project is depleted from the code section and it is much easier to maintain the data. Furthermore, should new currencies be supported in the future, we also have no need of input the price information in the code, and only need to append the configuration files.
 \section{Language switch}
 
 
