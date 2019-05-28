@@ -96,8 +96,6 @@ He designed the interfaces for various modules of the project including the \emp
 \par
 He also finishes the testing work of the entire project, whose work  is an important foundation of the \emph{Test-Driven Development} of the project. In particular, he realizes the \emph{JUnit} test cases within the project and the \emph{Swagger} interface test of the project on the Huawei Cloud Platform.
 
-
-
 \chapter{Analysis of the demands}
 \section{General analysis of the demands}
 In this version of requirement, a series of new functions are proposed and they are supposed to bring the general construction of the project some prominent change. Specifically, the requirements of the project lie in two perspectives: a prototype that should work for the all future new regions and two detailed and concrete implementations for the region of China and Hong Kong specifically.
@@ -133,10 +131,11 @@ Considering we are running a Spring Application, which allows a wide range of pr
 \par
 In such way, the price information of the project is depleted from the code section and it is much easier to maintain the data. Furthermore, should new currencies be supported in the future, we also have no need of input the price information in the code, and only need to append the configuration files.
 \section{Language switch}
-
-
+The switch of language is a common requirement in all the international software. To improve maintainability and readability, in addition to reduce future cost of maintenance, all the display language tags are stored in some files as constants. For example, in Android applications, all the \emph{String}s that need to be displayed are encouraged to be saved into a separate XML file and then read via the constant names. Meanwhile, the the global language switch, either controlled by the Android Operating System or controlled by the application, can determine which \emph{String} to be displayed. That is, the same display info are stored and accessed via the same variable name, while the variables direct the application to different files when different languages are set. 
+\par
+Therefore, in our application, we are encouraged to store the display information via constants and a global language switch can determine which language's constant will be transferred to the application.
 \section{Sales strategies}
-
+Sales strategy is an important part of the application.
 
 
 
