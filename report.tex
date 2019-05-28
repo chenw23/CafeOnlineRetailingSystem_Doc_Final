@@ -145,6 +145,26 @@ Considering such circumstances, each sales strategy need to be a single extract-
 
 
 \chapter{Detailed design for the implementation}
+\section{Test design: for Test-Driven Development}
+\subsection{Test components of the project}
+In this project, we have various types of tests so as to ensure that all components are working properly.
+\par
+Specifically, we have JUnit test to be utilized during the initial stages of development. These unit tests give clear guidance of the project.
+In addition, we have utilized the Huawei Cloud platform with its strong Interface test function. The interface test function enables the entire project can function well with its public interfaces. What's more, the interface tests are integrated into the project as Swagger Interface test component. In this component, there is a standalone package that has a front-end user interface and will be convenient to present interface test locally.
+\subsection{Swagger Interface Test}
+The front-end user interface of the local Swagger Interface Test is shown as the following figures(Figure \ref{2} and Figure \ref{3}):
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.45]{swagger2.png}
+  \caption{Overall workflow}\label{2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.45]{swagger1.png}
+  \caption{Overall workflow}\label{3}
+\end{figure}
 
 %Huang Jiani 2019-5-20 below%
 \section{Switch Language Implementation}
