@@ -183,8 +183,51 @@ The front-end user interface of the local Swagger Interface Test is shown as the
 
 
 \chapter{Problems encountered in this project}
+\section{Problems in coding}
+\subsection{Wrong usage of built-in menu item price}
+\par When testing the strategy of \emph{CombinationDiscountStrategy}, it occurs an error. The discount is illegal when the currency is hkd. Therefore, I create a work item \#2282258. After checking the implementation of the class, I found the reason. In fact, there may be more than one error, but of the same type. For example, according to the strategy, when there are two cappuccino, we can get the second one for half price. But the involved method just returns a discount of 11 yuan and it is illegal. When the currency is hkd, the discount is 12.5 hkd. So in order to cope with the problem, we use the method \emph{menuService.getPrice(Ljava/lang/String,Ljava/lang/String):LD} to replace the built-in price. And the error disappered.
+\subsection{Wrong usage of \% in a format string}
+\par According to the strategy of \emph{TeaAndCoffee15OffStrategy}, when the order consists of one for coffee or tea, we can get drinks \%15 off. So in the payment information, there may be a character of \%. In most time, it is ok. But a \% in the format string may be illegal, especially in the format string formatting by \%d, \%f or something else. In this format string, we should use \%\% to replace \%. In fact, it is just an easy question, but not least.
+\subsection{Problems in applying swagger testing}
+\par In the project, we use two tests, one for \emph{Junit} and one for \emph{Swagger}. \emph{Junit} testing is much easier than the second one, we just need to add some test classes. Before using \emph{Swagger} testing, we use an interface testing for a special url in the cloud of huawei. But the interface testing is inefficient and there is a bad management for it, so we deside to use \emph{Swagger} testing. But it is not essay, First, I need to know what is \emph{Swagger} testing and how to use it. After learning it, I found it is a set of interface testing case and it can be imported to a script, so it is essay to manage. But when I attempted to use it, some problems occur. First, I should add the dependency of the \emph{Swagger} to the file \emph{pom.xml}, which would load some classes when the program works. And then, to use it, I should make some annotations. And the following are some examples.
+\begin{lstlisting}[language=java]
+@RestController
+@RequestMapping("/orders")
+@Api(value="order",description = "the service to handle orders")
+public class OrderController {
 
+    @Autowired
+    private OrderServiceImpl orderServiceImpl;
 
+    @RequestMapping(value="/add",method= RequestMethod.POST,produces = "application/json")
+    @ApiOperation(value = "submit a order.",response = ResponseEntity.class)
+    public ResponseEntity<PaymentInfo> order(@RequestBody @Valid Order order) {
+        ArrayList<MarketingStrategy> strategies = new ArrayList<>();
+        strategies.add(new DoubleElevenStrategy());
+        strategies.add(new CombinationDiscountStrategy());
+        strategies.add(new FullDiscountStrategy());
+        strategies.add(new TeaAndCoffee15OffStrategy());
+        orderServiceImpl.setStrategies(strategies);
+        return ok().body(orderServiceImpl.pay(order));
+    }
+}
+\end{lstlisting}
+\begin{lstlisting}[language=java]
+@ApiModelProperty(notes="order ID",required = true,dataType = "String")
+private String id;
+
+@ApiModelProperty(notes="order items",required = true,dataType = "OrderItem")
+private List<OrderItem> orderItems;
+
+@ApiModelProperty(notes = "the currency",required = true,dataType = "String")
+private String currency;
+\end{lstlisting}
+\par In the second example, I worked out an important problem. In the second annotation, I am confused about what the dataType should be because the dataType of \emph{ApiModelProperty} only consists of some basic types, such as int, string, double and stuff. After searching for the solution for minutes, I still didn't find the right answer. And I deside to assign \emph{OrderItem} to it and make annotations for the class \emph{OrderItem}. Luckily, it works well. So I finished using \emph{Swagger} testing.
+\section{Problems in designing the project's structure}
+\subsection{Problem in applying xml files}
+\par Being influenced by the arrangement of constants in \emph{android} projects, I often want to use \emph{xml} files to cache some constants. But after I tried some methods to do so, I found it is much more complex than using \emph{properties} files, which is well supported by \emph{java virtual machine}. So to be easy, we use \emph{properties} files to cache menu and some important constants.
+\subsection{Wrong design of interface in \emph{MarketingStrategy}}
+\par In the interface \emph{MarketingStrategy}, there is an important method called \emph{getDiscount(Lfudan/se/lab4/dto/Order):Lfudan/se/lab4/dto/PaymentInfo}. Now the method is well designed. But at first, I design the return value to be a double value. And if so, to get the payment information, the program may do ssame thing in another position and it is inefficient.
 \chapter{Measures against demand change}
 
 
