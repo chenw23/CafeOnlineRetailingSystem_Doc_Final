@@ -181,6 +181,17 @@ The front-end user interface of the local Swagger Interface Test is shown as the
 \subsection{Currency Service Classes}
 %Huang Jiani 2019-5-20 above%
 
+%Tang Xinyue 2019-5-29 below%
+\section{MarketingStrategy implementation}
+\subsection{DoubleElevenStrategy class}
+\par this class has the isvalid() method to check on whether the marketing strategy can be applied to the order or not.  If the date is November 11th, this method returns true.
+\par If isvalid() returns true, getDiscount() returns 50 percent of the total price as discout, if it returns false, getDiscount() returns 0 as discount.
+\subsection{TeaAndCoffee15OffStrategy class}
+\par this class has the isvalid() method to check on whether the marketing strategy can be applied to the order or not. If the order contains at least one cup of tea or coffee, then isvalid() returns true.
+\par If isvalid() returns true, getDiscount() returns 15 percent of the total price as discout, if it returns false, getDiscount() returns 0 as discount.
+\subsection{MarketingStrategy interface}
+\par this interface is designed to has getDiscount(Order order) method, which returns the PaymentInfo. This interface makes all those marketing strategies pluggable.
+%Tang Xinyue 2019-5-29 above%
 
 \chapter{Problems encountered in this project}
 \section{Problems in coding}
