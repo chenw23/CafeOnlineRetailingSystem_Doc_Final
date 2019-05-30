@@ -141,7 +141,14 @@ Considering such circumstances, each sales strategy need to be a single extract-
 
 
 \chapter{General design for the implementation}
-
+The general prototype design of the project is shown as the Figure \ref{2} below.
+\par
+The UML diagram reveals how the components of the application interact with each other. Meanwhile, the connecting lines indicate the relationship between the classes in the project.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.52]{UML_Diagram.pdf}
+  \caption{Overall workflow}\label{2}
+\end{figure}
 
 
 \chapter{Detailed design for the implementation}
@@ -152,18 +159,18 @@ In this project, we have various types of tests so as to ensure that all compone
 Specifically, we have JUnit test to be utilized during the initial stages of development. These unit tests give clear guidance of the project.
 In addition, we have utilized the Huawei Cloud platform with its strong Interface test function. The interface test function enables the entire project can function well with its public interfaces. What's more, the interface tests are integrated into the project as Swagger Interface test component. In this component, there is a standalone package that has a front-end user interface and will be convenient to present interface test locally.
 \subsection{Swagger Interface Test}
-The front-end user interface of the local Swagger Interface Test is shown as the following figures(Figure \ref{2} and Figure \ref{3}):
+The front-end user interface of the local Swagger Interface Test is shown as the following figures(Figure \ref{3} and Figure \ref{4}):
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.45]{swagger2.png}
-  \caption{Overall workflow}\label{2}
+  \caption{Overall workflow}\label{3}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.45]{swagger1.png}
-  \caption{Overall workflow}\label{3}
+  \caption{Overall workflow}\label{4}
 \end{figure}
 
 %Huang Jiani 2019-5-20 below%
@@ -250,17 +257,51 @@ private String currency;
 \par This new need is much more normal than above two needs and it can be easily satified. First, we design an interface \emph{MarketingStratgy}, in which there is a method named \emph{getDiscount(Lfundan/se/la4/dto/Order)}. The method accepts an order and return it's payment information. If we want to add some new strategies, what we need to do is just to add some classes which should implement the interface.
 
 \chapter{Tools and literature involved in this project}
+\section{Swagger Interface Test}
+The OpenAPI Initiative (OAI) has become the de facto standard to specify what an API can do. The API community as a whole has embraced the standard, and tooling around OpenAPI, especially Swagger, has never been better, with ways to document, implement, and test APIs that adhere to the standard. This is an awesome thing for the API community. Instead of taking precious time to create homegrown standards and ways of creating, testing, and monitoring APIs, API providers can follow the specification and avoid much of the standard work to build an API, and focus on innovating by what their APIs can do.
+\par
+With the facts above, Swagger is a powerful tool enabling us to test our APIs and clearify the API definitions.
+\par
+Swagger is an open-source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services. While most users identify Swagger by the Swagger UI tool, the Swagger toolset includes support for automated documentation, code generation, and test-case generation. 
+\par
+Sponsored by SmartBear Software, Swagger has been a strong supporter of open-source software, and has widespread adoption. 
+\par
+In this project, we are adopting Swagger Inspector to utilize the functions of Swagger Interface Test. The detailed implementation and test results can be seen from the previous chapters.
 
+\section{Singleton Pattern}
+In software engineering, the singleton pattern is a software design pattern that restricts the instantiation of a class to one "single" instance. This is useful when exactly one object is needed to coordinate actions across the system. The term comes from the mathematical concept of a singleton. 
+\par
+Critics consider the singleton to be an anti-pattern in that it is frequently used in scenarios where it is not beneficial, introduces unnecessary restrictions in situations where a sole instance of a class is not actually required, and introduces global state into an application.
 
+\subsection{The general characteristics of Singleton Pattern}
 
-\chapter{Conclusion for the process of accomplishing this project}
+The singleton design pattern is one of the twenty-three well-known "Gang of Four" design patterns that describe how to solve recurring design problems to design flexible and reusable object-oriented software, that is, objects that are easier to implement, change, test, and reuse. 
+The singleton design pattern solves problems like:
+\begin{enumerate}
+\item How can it be ensured that a class has only one instance?
+\item How can the sole instance of a class be accessed easily?
+\item How can a class control its instantiation?
+\item How can the number of instances of a class be restricted?
+\end{enumerate}
 
+The singleton design pattern describes how to solve such problems: 
+\begin{enumerate}
+\item Hide the constructor of the class.
+\item Define a public static operation (\emph{getInstance()}) that returns the sole instance of the class.
+\end{enumerate}
+The key idea in this pattern is to make the class itself responsible for controlling its instantiation (that it is instantiated only once).
+The hidden constructor (declared private) ensures that the class can never be instantiated from outside the class.
+The public static operation can be accessed easily by using the class name and operation name ( \emph{Singleton.getInstance()}). 
 
 \begin{thebibliography}{A}
 
 
 \bibitem{1}
 Wikipedia contributors. (2019, March 22). JUnit. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 14:53, April 1, 2019, from \url{https://en.wikipedia.org/w/index.php?title=JUnit&oldid=888928403}
+\bibitem{2}
+Wikipedia contributors. (2019, March 7). Singleton pattern. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 04:09, May 30, 2019, from \url{https://en.wikipedia.org/w/index.php?title=Singleton_pattern&oldid=886672542}
+\bibitem{3}
+SmartBear Software. (2019, May 30). API Testing Tools | Swagger \& ReadyAPI  | Swagger. In \emph{The Best APIs are Built with Swagger Tools | Swagger}. Retrieved 12:13, May 30, 2019, from \url{https://swagger.io/solutions/api-testing/}
 
 \end{thebibliography}
 \end{document} 
