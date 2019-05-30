@@ -173,7 +173,7 @@ The front-end user interface of the local Swagger Interface Test is shown as the
   \caption{Overall workflow}\label{4}
 \end{figure}
 
-%Huang Jiani 2019-5-20 below%
+%Huang Jiani 2019-5-30 below%
 \section{Switch Language Implementation}
 \par The switch of language will be mainly displayed in the user interface, so all the information that need to be multi-translated will be separately placed into  different constant files. In this iteration of implementation, we only instantiate the Chinese and English versions. And the correspondent service classes will use a typical mechanism called reflection to implement the switch of different constant language files.
 \par In the following two sections, the detailed design of constant files and language service classes will be respectively clarified.
@@ -185,8 +185,11 @@ The front-end user interface of the local Swagger Interface Test is shown as the
 
 \section{Switch Currency Implementation}
 \subsection{Currency Property Files}
+\par The different country-version menus are put in the resources directory. Temporarily, we have application-menu-hkd.properties and application-menu-rmb.properties for example.The information are stored as key-value mappings, in which keys are drink names and values are prices. 
 \subsection{Currency Service Classes}
-%Huang Jiani 2019-5-20 above%
+\par All the read of resources file is done in the static procedure, and what we have is a map of maps of different prices of drinks in different country. The traversal of all the files is finished by another position2currency file.
+\par Then the  access of price will become easier by just use the get( ) method of Map API. 
+%Huang Jiani 2019-5-30 above%
 
 %Tang Xinyue 2019-5-29 below%
 \section{MarketingStrategy implementation}
