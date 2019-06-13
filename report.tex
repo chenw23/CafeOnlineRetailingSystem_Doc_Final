@@ -38,8 +38,126 @@ Fudan University
 
 \chapter{Feature Demands}
 
+% Huang 2019-06-13 below
 \section{Refined function requirements}
+\subsection{Administration access Authorization}
 
+\begin{enumerate}
+\item Any shop assistant must first get authorized administration access of the system before he conducts all the normal routines including signing up, logging in, matching drinks, getting drink descriptions and ordering. 
+\item Anyone except shop assistants is unauthorized to the administration access.
+\item To get the authorized administration access, the shop assistant must do XXXXXX.
+\end{enumerate}
+
+\subsection{Signing up}
+
+\begin{enumerate}
+\item Any shop assistant can use the unique username and password to sign up.
+\item The username will be persistently recorded in the user.csv (?) after the shop assistant signs up.
+\item The username must start with \textbf{starbb\_};
+\item The username can consist of \textbf{letters}, \textbf{numbers} and \textbf{underline}, excluding any other symbols;
+\item The username should have a length greater than or equal to 8 and less than 50.
+\item The password can consist of \textbf{letters}, \textbf{numbers} and \textbf{\_}, excluding any other symbols;
+\item The password must consist of all the three types, i.e. \textbf{letters}, \textbf{numbers} and \textbf{\_}, excluding any other symbols;
+\item The password should have a length greater than or equal to 8 and less than 100.
+\end{enumerate}
+
+
+\subsection{Logging in}
+\begin{enumerate}
+\item Only if the shop assistant logs in successfully can he do the other normal routines including matching drinks, getting drink descriptions and ordering.
+\item The shop assistant will log in successfully if and only if the username and password are matched.
+\item The login status will be recorded after the shop assistant logs in successfully.
+\item If the shop assistant fails to log in, the system will throw a runtime exception to prompt the failed login.
+\item If the shop assistant fails to log in because of wrong password, the system will prompt \textbf{Username or password error};
+\item If the shop assistant fails to log in, he will not allowed to conduct any other operations.
+\end{enumerate}
+
+\subsection{Matching drinks}
+
+\begin{enumerate}
+\item The shop assistant can get different drinks considering different cup sizes and different kinds and numbers of ingredients.
+\end{enumerate}
+
+
+\subsection{Obtaining drink descriptions}
+\begin{enumerate}
+\item The shop assistant can obtain and check different descriptions of drinks.
+\item The customer can obtain and check different descriptions of drinks.
+\end{enumerate}
+
+\subsection{Calculate order charge}
+\begin{enumerate}
+\item The shop assistant can order according to the verbal instructions of the customer.
+\item The shop assistant can calculate the order charge.
+\item The customer can check the order charge. 
+\end{enumerate}
+
+
+\subsection{Drinks supported}
+\begin{enumerate}
+\item The default drinks include coffee and tea.
+\item The default coffee includes Espresso and Cappuccino.
+\item The default tea includes GreenTea and RedTea.
+\item Different stores can customize their own drinks of local characteristics.
+\end{enumerate}
+
+\subsection{Ingredients supported}
+\begin{enumerate}
+\item The default ingredients include milk, chocolate, cream and sugar.
+\item Different kinds and numbers of Ingredients can be added .
+\end{enumerate}
+
+\subsection{Cup size supported}
+\begin{enumerate}
+\item There are totally three kinds of cup size : large, middle and small.
+\end{enumerate}
+
+\subsection{Discount supported}
+\begin{enumerate}
+\item Different discount strategies can have superposition.
+\item 2 cups of Large-cup Espresso will have 20\% off discount.
+\item Buying three cups of tea will send one for free.
+\item Cappuccino second half price.
+\item All drinks full 100 minus 30
+\item Double Eleven all drinks 50\% off.
+\item Order including both tea and coffee will have 15\% discount.
+\end{enumerate}
+
+\subsection{Language switch}
+\begin{enumerate}
+\item The system language can be switched to the official language of different countries and regions.
+\item The language switch should cover everywhere customers can see and check
+\end{enumerate}
+
+\subsection{Currency switch}
+\begin{enumerate}
+\item The currency switch will not consider exchange rate fluctuations.
+\item The currency should be switched according to different countries and regions.
+\end{enumerate}
+
+\subsection{Price fix}
+\begin{enumerate}
+\item The system can fix the prices of all the items.
+\end{enumerate}
+
+
+
+\subsection{Configuration and Maintenance}
+\begin{enumerate}
+\item The maintenance personnel can configure and maintain all the settings including drinks, ingredients, cup-size, discount, language, currency and price-fixing.
+\item The system must provide log information for the maintenance personnel.
+\end{enumerate}
+
+
+\subsection{log information supported}
+\begin{enumerate}
+\item Which kind of log information should be recorded.
+\end{enumerate}
+
+
+
+
+% Huang 2019-06-13 above
 \section{Detailed description of refined function requirements}
 
 \chapter{Performance Demands}
