@@ -88,10 +88,9 @@ Fudan University
 \subsection{Order charge calculation}
 \begin{enumerate}
 \item The shop assistant can order according to the verbal instructions of the customer.
-\item The shop assistant can calculate the order charge.
-\item The customer can check the order charge. 
+\item The shop assistant can calculate the order charge including the original price, discount and the total discount charge.
+\item The customer can check the order charge including the original price, discount and the total discount charge.
 \end{enumerate}
-
 
 \subsection{Drinks supported}
 \begin{enumerate}
@@ -99,14 +98,14 @@ Fudan University
 \item The default coffee includes Espresso and Cappuccino.
 \item The default tea includes GreenTea and RedTea.
 \item Different stores can customize their own drinks of local characteristics.
-\item Every drink should have attributes of its name, price and description.
-
+\item Every drink should have attributes of its name, price and description(?).
 
 \end{enumerate}
 
 \subsection{Ingredients supported}
 \begin{enumerate}
 \item The default ingredients include milk, chocolate, cream and sugar.
+\item The prices of ingredients can be fixed by the maintenance personnel.
 \item Different kinds and numbers of Ingredients can be added .
 \end{enumerate}
 
@@ -117,49 +116,57 @@ Fudan University
 
 \subsection{Discount supported}
 \begin{enumerate}
-\item Different discount strategies can have superposition.
-\item 2 cups of Large-cup Espresso will have 20\% off discount.
-\item Buying three cups of tea will send one for free.
-\item Cappuccino second half price.
-\item All drinks full 100 minus 30
-\item Double Eleven all drinks 50\% off.
-\item Order including both tea and coffee will have 15\% discount.
+\item There are three categories of discount strategies in total : Double eleven, Full count and Combination.
+\item Combination strategy has four concrete strategies.
+\item The concrete strategies can have superposition.
+\item Different categories of discount strategies cannot have superposition.
+\item Combination 1: Order including both tea and coffee will have 15\% discount.
+\item Combination 2: 2 cups of Large-cup Espresso will have 20\% off discount.
+\item Combination 3: Buying three cups of tea will send one for free.
+\item Combination 4: Cappuccino second half price.
+\item Full count: All drinks full 100 minus 30
+\item Double Eleven: All drinks 50\% off.
 \end{enumerate}
 
 \subsection{Language switch}
 \begin{enumerate}
 \item The system language can be switched to the official language of different countries and regions.
-\item The language switch should cover everywhere customers can see and check
+\item The language switch should cover everywhere customers can see and check.
+\item The default supported languages are Chinese and English.
 \end{enumerate}
 
 \subsection{Currency switch}
 \begin{enumerate}
 \item The currency switch will not consider exchange rate fluctuations.
 \item The currency should be switched according to different countries and regions.
+\item The default supported currencies are Chinese Yuan, Hong Kong dollar and US dollar.
 \end{enumerate}
 
 \subsection{Price fix}
 \begin{enumerate}
-\item The system can fix the prices of all the items.
+\item The maintenance personnel can fix the prices of all the items.
 \end{enumerate}
-
-
 
 \subsection{Configuration and Maintenance}
 \begin{enumerate}
 \item The maintenance personnel can configure and maintain all the settings including drinks, ingredients, cup-size, discount, language, currency and price-fixing.
-\item The system must provide log information for the maintenance personnel.
-\end{enumerate}
 
+\end{enumerate}
 
 \subsection{log information supported}
 \begin{enumerate}
-\item Which kind of log information should be recorded.
+\item The system must provide log information for the maintenance personnel.
+\item The log information must include records of order errors and successful order cases.
 \end{enumerate}
 
-% Huang 2019-06-13 above
-\section{Detailed description of refined function requirements}
 
+\section{Detailed description of refined function requirements}
+\subsection{Scenario analysis and modeling}
+\subsection{Class analysis and modeling}
+\subsection{Data Flow analysis and modeling}
+\subsection{Behavior analysis and modeling}
+
+% Huang 2019-06-14 above
 \chapter{Performance Demands}
 
 \section{Massive end user support}
