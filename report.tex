@@ -152,7 +152,7 @@ According to the interview record of the lab assigner, the whole system should s
 \subsection{Register}
 \begin{enumerate}
 \item Any shop assistant can use the unique username and password to register.
-\item The username will be persistently recorded in the user.csv (?) after the shop assistant registers.
+\item The username will be persistently recorded in the user.csv after the shop assistant registers.
 \item The username must start with \textbf{starbb\_};
 \item The username can consist of \textbf{letters}, \textbf{numbers} and \textbf{underline}, excluding any other symbols;
 \item The username should have a length greater than or equal to 8 and less than 50.
@@ -233,6 +233,7 @@ According to the interview record of the lab assigner, the whole system should s
 \item The system language can be switched to the official language of different countries and regions.
 \item The language switch should cover everywhere customers can see and check.
 \item The default supported languages are Chinese and English.
+\item Before the shop assistant makes an order, he can switch the language to satisfy the requirements of customers.
 \end{enumerate}
 
 \subsection{Currency switch}
@@ -240,28 +241,32 @@ According to the interview record of the lab assigner, the whole system should s
 \item The currency switch will not consider exchange rate fluctuations.
 \item The currency should be switched according to different countries and regions.
 \item The default supported currencies are Chinese Yuan, Hong Kong dollar and US dollar.
+\item  Before the shop assistant makes an order, he can switch the currency to satisfy the requirements of customers.
 \end{enumerate}
 
 \subsection{Price fix}
 \begin{enumerate}
-\item The maintenance personnel can fix the prices of all the items.
+\item The maintenance personnel can fix the prices of all the items according to the regulations of the company.
 \end{enumerate}
 
 \subsection{Configuration and Maintenance}
 \begin{enumerate}
 \item The maintenance personnel can configure and maintain all the settings including drinks, ingredients, cup-size, discount, language, currency and price-fixing.
+\item The maintenance personnel should maintain two log files including the information of order errors and successful order cases.
 \end{enumerate}
 
 \subsection{log information supported}
 \begin{enumerate}
 \item The system must provide log information for the maintenance personnel.
 \item The log information must include records of order errors and successful order cases.
+\item The order error file should include the order id and the error information.
+\item The order success file should include the order id and payment information.
 \end{enumerate}
 
 \section{Detailed description of refined function requirements}
 
 \subsection{Scenario analysis and modeling}
-We apply the use case diagram to the scenario analysis and modeling procedure. As the diagram shows, there are two actors including customers and shop assistants and the online  system in the whole interaction. Ordering and register are the  two main use cases. Several sub use cases of ordering like beverage information checking, beverage matching and beverage price calculating. And All these use cases include the smaller login user case.
+We apply the use case diagram to the scenario analysis and modeling procedure. As the diagram shows, there are two actors including customers and shop assistants and the online  system in the whole interaction. Ordering and register are the  two main use cases. Several sub use cases of ordering like beverage information checking, beverage matching, beverage price calculating, language and currency switch. And All these use cases include the smaller login user case.
 \begin{figure}[hbtp]
   \centering
   \includegraphics[scale=0.43]{useCase.pdf}
@@ -286,8 +291,7 @@ In this use-case, we apply the swim lane diagram to concisely describe the relat
 \begin{enumerate}
 \item  \textbf{Login failure:} If the shop assistant enters wrong username or password, he can get the chance to enter again until he finally enters the correct username and password and logs in the system. 
 
-\item \textbf{Order failure:} If the order process is interrupted due to the internet or other hardware break, the order process will return back to the calculating procedure after recovery.
-\end{enumerate}
+\item \textbf{Order failure:} If the order process is interrupted due to the internet or other hardware break, the order process will restart a new order.\end{enumerate}
 \item \textbf{Frequency:} The ordering use-case will be continuing 24 hours a day only if there is a customer waiting to order.
 \end{itemize}
 
@@ -367,13 +371,17 @@ We
 \begin{figure}
   \centering
   \includegraphics[scale=0.38]{DataFlowLevel1.pdf}
-  \caption{Data Flow Level 1 Diagram}\label{4}
+  \caption{Data Flow Level 1 Diagram}\label{6}
 \end{figure}
 
 \subsection{Behavior analysis and modeling}
 In this part, we apply the UML status diagram to conduct the behavior analysis and modeling.
 \subsubsection{Whole status transfer}
-
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.38]{statusDiagramPDF.pdf}
+  \caption{UML Status Diagram}\label{7}
+\end{figure}
 % Huang 2019-06-19 above
 \chapter{Performance Demands}
 
