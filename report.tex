@@ -47,9 +47,79 @@ Budget: 1 million yuan
 
 \section{Overview of the features of the project}
 \subsection{Beverage Store}
-
-
-
+The beverage store should have the following functions:
+\begin{enumerate}
+\item
+Drink support: The system can support a variety of drinks from the beverage store;
+\item Ingredient support: The system can support the diverse ingredients offered by the beverage store;
+\item
+Cup support: The system can support the variety of cups offered by the beverage store;
+\item 
+Preferential support: The system can support the various discounts offered by the beverage store. Currently, the discounts offered by the beverage store are as follows (these offers have certain superposition and mutual exclusion):
+\begin{itemize}
+\item
+20\% off 2 cups of espresso
+\item 
+Tea buy 3 get 1 free
+\item
+Cappuccino 2nd Cup Half Price
+\item
+All items 30 yuan deduction over 100 yuan
+\item 50\% off on Nov 11th
+\item
+15\% off for tea and coffee
+\end{itemize}
+\item Language support: The system can support the switching of different languages in different regions of the beverage store;
+\item
+Currency support: The system can support the conversion of different currencies in different regions of the beverage store;
+\item
+Pricing support: The system is priced according to the regulations of the beverage store.
+\end{enumerate}
+\par
+General requirements: This system should support the beverages offered and launched by the beverage store, a variety of ingredients, these drinks have different cup types, of course, in order to sell, the system also needs to support a variety of preferential strategies launched by the beverage store, while In order to develop internationally, the system must support switching between different languages and currency conversion. Finally, the pricing of all goods must be strictly in accordance with the regulations of the beverage store.
+\subsection{Salesperson}
+The salesperson should have the following functions:
+\begin{enumerate}
+\item
+Registration: The salesperson can register in the system with a valid account password;
+\item
+Login: The salesperson can log in using the account number and password to ensure the daily operation of the salesperson;
+\item
+Matching: The salesperson can use the system with different drinks when they have permission;
+\item
+Description: The salesperson can use the system to obtain a description of the different beverages when they have permission;
+\item
+Valuation: The salesperson can use the system to place orders when they have permission. After the order is placed, the price of different beverages can be calculated. The price of the beverage depends on the base price of the beverage, the price of the cup of the beverage, the price of the additional ingredients, and also consider the number of drinks. And a variety of preferential strategies.
+\end{enumerate}
+\par
+General requirements: This system must support the salesperson to perform daily operations after obtaining the permission, including registration, registration, beverage matching, description acquisition and order placement. These daily operations must comply with the company's legal requirements. In addition, the system also needs to provide according to company regulations. Pricing function, these operations are convenient for the day-to-day operation of the salesperson.
+\subsection{Development and operation personnel}
+The development and operation personnel should have the following functions:
+\begin{enumerate}
+\item
+Background maintenance: Maintenance personnel can configure and maintain various support such as drinks, ingredients, cups, offers, language, currency, pricing, etc. in the background according to company regulations;
+\item
+Log information: The maintenance personnel need the log information provided by the system during maintenance.
+\item
+Support the use of a large number of stores concurrently 
+\item 
+The system should be stable for a long time
+\end{enumerate}
+General requirements: Development and operation and maintenance personnel can perform system background maintenance according to company regulations, and provide standardized log information during system operation.
+\subsection{Beverage shop customer}
+The beverage shop customer should have the following functions:
+\begin{enumerate}
+\item
+Matching: The order can be matched by the salesperson;
+\item
+Pricing: You can see the price of the order;
+\item
+Offer: Customers want the bigger the better, the better!
+\item
+Description: You can see a description of the different beverages, a detailed description of the beverage price, and a specific description of the specifications used.
+\end{enumerate}
+\par
+General requirements: The customer mainly performs system operation through the salesperson. The customer cares that the system can match the beverage that he wants, and at the same time needs to see the correct price and specific description. Of course, the customer wants the bigger the better.
 \section{Module division of the project}
 
 \section{User characteristics of the project}
