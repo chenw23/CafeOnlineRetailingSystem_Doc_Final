@@ -218,12 +218,6 @@ While deploying the project, the project team should care about the budget and m
 % Huang 2019-06-18 below
 \section{Refined function requirements}
 According to the interview record of the lab assigner, the whole system should satisfy the requirements in the following perspectives:
-\subsection{Administration access authorization}
-\begin{enumerate}
-\item Any shop assistant must first get authorized administration access of the system before he conducts all the normal routines including register, login, matching drinks, getting drink descriptions and ordering. 
-\item Anyone except shop assistants is unauthorized to the administration access.
-\item To get the authorized administration access, the shop assistant must do XXXXXX.
-\end{enumerate}
 
 \subsection{Register}
 \begin{enumerate}
@@ -240,6 +234,7 @@ According to the interview record of the lab assigner, the whole system should s
 \subsection{Login}
 \begin{enumerate}
 \item Only if the shop assistant logs in successfully can he do the other normal routines including matching drinks, getting drink descriptions and ordering.
+\item Anyone except shop assistants is unauthorized to the administration access.
 \item The shop assistant will log in successfully if and only if the username and password are matched.
 \item The login status will be recorded after the shop assistant logs in successfully.
 \item If the shop assistant fails to log in, the system will throw a runtime exception to prompt the failed login.
@@ -331,12 +326,13 @@ According to the interview record of the lab assigner, the whole system should s
 \item The maintenance personnel should maintain two log files including the information of order errors and successful order cases.
 \end{enumerate}
 
-\subsection{log information supported}
+\subsection{Log information supported}
 \begin{enumerate}
 \item The system must provide log information for the maintenance personnel.
 \item The log information must include records of order errors and successful order cases.
 \item The order error file should include the order id and the error information.
 \item The order success file should include the order id and payment information.
+\item The order id recorded in the files should be unique in the system.
 \end{enumerate}
 
 \section{Detailed description of refined function requirements}
@@ -386,7 +382,6 @@ In the ordering user-case, we apply the activity diagram to describe the whole p
 \item \textbf{Precondition:} 
 \begin{enumerate}
 \item The server of the system is running normally.
-\item The shop assistant has gained the access authorization before.
 \end{enumerate}
 \item \textbf{Triggering condition:} None
 \item \textbf{Main scene:} After the shop assistant gains the access authorization successfully, he can enter the system to choose login or register. After he enters the valid username and password, he can use them to login and make orders.
