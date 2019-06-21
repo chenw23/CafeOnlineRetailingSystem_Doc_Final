@@ -138,7 +138,10 @@ There is no obvious runtime environment restriction of the application both in t
 \par
 After analysis of the market, the needs and demands, and the performance of the application, we have decided to use the following runtime environment as our production. 
 \subsection{Server side runtime environment}
-\subsubsection{Operating system}
+After thorough research about the server providers, we have decided to adopt the DELL Workstation as the server to proved service. As have stated above, there are about 1,000 customers coming to a store a day and there are 200 stores in total. However, what the distribution of customer flow over time is not given and according to the description from the teaching assistants, we can see the statistics above as the average customer flow to the store. In this way, every hour there might be 200,000 order requests, indicating that the server should handle at least 50 requests a second. We have found that the Dell OptiPlex 7050 with 3.6GHz Core i7-7700 CPU meet these demands well, whose 8 cores and 8MB cache will make request handling rapidly.
+\par
+The price for the DELL OptiPlex 7050 with the specification below will be about \$700  and it is well within our budgets. 
+\subsubsection{SYSTEM INFORMATION}
 Running Ubuntu Linux, the Ubuntu 18.04 (bionic) release.
 \begin{itemize}
 \item GNOME: 3.28.2 (Ubuntu)
@@ -216,6 +219,7 @@ PCI bridge(s)
 \end{itemize}
 \end{itemize}
 \subsection{Client side runtime environment}
+The client side needs to be connected to the Internet, have a display and input devices where the staff can create specific requests. After research, we have found that the Lenovo Laptop Xiaoxin Air 13 Pro well meet the demands. The price for the laptop is \$1,000 for new and the old one has a price of \$400, which is well within the budget. The detailed configuration for the client side computer is shown as below.
 \subsubsection{SYSTEM INFORMATION}
 \begin{itemize}
 \item Running Ubuntu Linux, the Ubuntu 18.04 (bionic) release.
