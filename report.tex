@@ -596,21 +596,48 @@ This requires that the system should not stop or exit by accident at any time. W
 \subsection{Constraints (5 minutes)}
 \begin{enumerate}
 \item What is the number of servers? 
-
+\par
+There are 200 stores belonging to the company, each will treat 1000 customers each day. 
+\par
+The 1000 customers is a approximate number. It is a non-functional restriction and this might influence another function - the order number, which should be unique considering the order number stated below.
 \item Is there a regulation or limitation on the system running server-side operating system? 
+\par
+The infrastructure of the system has no restriction and should be purchased. We should consider the budget while considering the hardware specifications.
 \item What are the rules or restrictions for the client device operating system (in the store)? 
+\par
+The infrastructure of the system has no restriction and should be purchased. We should consider the budget while considering the hardware specifications.
 \item Is the salesperson's computer equipped with a screen for the customers?
+\par
+Yes.
 \item Are there still any other special hardware conditions (supplementary)? 
+\par
+No.
 \item Does the company have specific legal restrictions? 
+\par
+The salesperson should not have access to the modification of the price of the drinks.
 \item The development time and delivery time points given? 
+\par
+The project should be finished in 2 months.
 \item Is there an intermediate time frame when partial project need to be examined?
+\par
+No.
 \end{enumerate}
  \subsection{Performance requirements (5 minutes)}
  \begin{enumerate}
 \item Is 1,000 person/day referring to the salesperson or the customer (personal * month) ? What is the upper limit? 
+\par
+The 1000 customers is a approximate number. It is a non-functional restriction and this might influence another function - the order number, which should be unique considering the order number stated below.
+\par
+The upper limit will not be too greater than the general expectation above.
 \item What is the number of the stores in the description ``Support the usage of massive stores concurrently''?  What is the average number of orders in the store? And what about the peak order number? 
+\par
+The system should support the service with the customer number stated above. The average number is the customer number stated above and the peak number will not be too much greater than the average number.
 \item Order response time? 
+\par 
+The response time is 2 seconds for each order. It means from the order successfully created in the front end to the result of the order from the back end sent to the front end.
 \item ``Long-running and stable support system ": the requirements for a client front end and user-friendliness, cannot be unable to play due to any reason except network or hardware issues, cannot crash under massive clients, cannot have severe bug after online
+\par
+The system should run 24 hours a day and should not break down because of the program rather than physical problems. If an order is interrupted because of the network issues, the system can simply discard the order information.
 \end{enumerate}
 \subsection{Functional requirements(15 minutes)}
 \begin{enumerate}
@@ -648,8 +675,8 @@ The process of the order is confirmed and remain the same as the previous lab re
 \end{enumerate}
 \subsection{Possible modification of the code}
 \begin{enumerate}
-\item Increase currency dollar 
-\item Salesperson access 
+\item Add the US Dollar currency 
+\item Restrict the salesperson access 
 \item Offer modification 
 \item View all aspects of drinks and ingredients (cup type, price) individual customer / salesperson interface 
 \end{enumerate}
