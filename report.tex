@@ -593,6 +593,70 @@ This requires that the system should not stop or exit by accident at any time. W
 \item ``Give a corresponding map and explanation for each demand"
 \end{enumerate}
 \section{Organized interview records}
+\subsection{Constraints (5 minutes)}
+\begin{enumerate}
+\item What is the number of servers? 
+
+\item Is there a regulation or limitation on the system running server-side operating system? 
+\item What are the rules or restrictions for the client device operating system (in the store)? 
+\item Is the salesperson's computer equipped with a screen for the customers?
+\item Are there still any other special hardware conditions (supplementary)? 
+\item Does the company have specific legal restrictions? 
+\item The development time and delivery time points given? 
+\item Is there an intermediate time frame when partial project need to be examined?
+\end{enumerate}
+ \subsection{Performance requirements (5 minutes)}
+ \begin{enumerate}
+\item Is 1,000 person/day referring to the salesperson or the customer (personal * month) ? What is the upper limit? 
+\item What is the number of the stores in the description ``Support the usage of massive stores concurrently''?  What is the average number of orders in the store? And what about the peak order number? 
+\item Order response time? 
+\item ``Long-running and stable support system ": the requirements for a client front end and user-friendliness, cannot be unable to play due to any reason except network or hardware issues, cannot crash under massive clients, cannot have severe bug after online
+\end{enumerate}
+\subsection{Functional requirements(15 minutes)}
+\begin{enumerate}
+\item Drinks, ingredients, cups in the beverage store supported by the system 
+\par
+The drinks provided currently are coffee and tea, where coffee includes Cappuccino and Espresso and tea includes Red Tea and Green Tea. The ingredients includes chocolate and cream while the cup size vary from small cup, the middle cup to the large cup.
+\item Superposition and mutual exclusion of offers 
+\par
+The first three offers and the last offers are superposition offers, while the full discount offer and the double eleven offer are different.
+\item Language, currency, pricing 
+\par
+The price is different for each currency and we need to provide a price table for each of the currency we provide. In the meanwhile, we still need to provide a description for each item on the menu in each language we provide. That is to say, the menu should have versions according to the languages.
+\par
+These information are available after the order in the system. The order placing operation includes generating these information.
+\par
+In addition, the US Dollar is added into the system while the languages provided remain the same.
+\item Register \& log in 
+\par
+The detailed specification for the register and log in function are the same as Lab 3, and the requirement documentation for Lab 3 can be referred.
+\item Order versus Associate / independent with drinks, price, and description?
+\item What the customer sees: the information returned in the order content and paymentInfo , including the beverage, original price, discounted price, discount information (whether it is necessary to specify the description of each beverage) 
+\par
+The customer can place order via the staff and what the customer interact with the system is not considered.
+\item How the salesperson gets permission 
+\par
+A valid log in operation should enable the salesperson with permission.
+\item Log information provided by the system 
+\par
+The log information have two parts. There is an error log and a info log. When there is an error when placing the order, the order number should be recorded in the log whereas the order number is neglected when the error is not generated in the process of placing an order. 
+\par
+The language of the log should be English and it should be independent of the language switch of the application.
+\item Process confirmation again
+\par
+The process of the order is confirmed and remain the same as the previous lab requirements.
+\end{enumerate}
+\subsection{Possible modification of the code}
+\begin{enumerate}
+\item Increase currency dollar 
+\item Salesperson access 
+\item Offer modification 
+\item View all aspects of drinks and ingredients (cup type, price) individual customer / salesperson interface 
+\end{enumerate}
+\subsection{About the requirements document }
+\begin{enumerate}
+\item ``Give a corresponding map and explanation for each demand"
+\end{enumerate}
 \section{Code change logs in response of new demands}
 
 \begin{thebibliography}{A}
