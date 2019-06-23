@@ -21,6 +21,7 @@ Fudan University
 \maketitle
 
 \tableofcontents
+
 \chapter{Revision History of the demand documentation}
 
 \begin{tabular}{|c|c|c|l|}
@@ -486,7 +487,7 @@ According to the interview record of the lab assigner, the whole system should s
 We apply the use case diagram to the scenario analysis and modeling procedure. As the diagram shows, there are two actors including customers and shop assistants and the online  system in the whole interaction. Ordering and register are the  two main use cases. Several sub use cases of ordering like beverage information checking, beverage matching, beverage price calculating, language and currency switch. And All these use cases include the smaller login user case.
 \begin{figure}[hbtp]
   \centering
-  \includegraphics[scale=0.43]{useCase.pdf}
+  \includegraphics[width=12cm]{useCase.pdf}
   \caption{Overall Use-case Diagram}\label{1}
 \end{figure}
 
@@ -516,7 +517,7 @@ In this use-case, we apply the swim lane diagram to concisely describe the relat
 In the ordering user-case, we apply the activity diagram to describe the whole process. 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.44]{ActivityDiagram.pdf}
+  \includegraphics[width=12cm]{ActivityDiagram.pdf}
   \caption{Overall Use-case Diagram}\label{3}
 \end{figure}
 
@@ -580,14 +581,14 @@ We
 \subsubsection{level 0:} The top/level-0 diagram is an overall description of the whole system. The external entity are only control panel and control panel display. The data flow diagram for level 0 is shown as Figure \ref{5}. We can see what our system does is to process the order information and produce the corresponding payment information.
 \begin{figure}
   \centering
-  \includegraphics[scale=0.38]{DataFlowLevel0.pdf}
+  \includegraphics[width=12cm]{DataFlowLevel0.pdf}
   \caption{Data Flow Level 0 Diagram}\label{5}
 \end{figure}
 \subsubsection{level 1:}
 We can see a more detailed description of the whole process from the level-1 diagram in Figure \ref{6}. The order information flows from price-counting, sales-plan choosing and finally changes into payment information and shows in the control panel display.
 \begin{figure}
   \centering
-  \includegraphics[scale=0.38]{DataFlowLevel1.pdf}
+  \includegraphics[width=12cm]{DataFlowLevel1.pdf}
   \caption{Data Flow Level 1 Diagram}\label{6}
 \end{figure}
 
@@ -597,7 +598,7 @@ In this part, we apply the UML status diagram to conduct the behavior analysis a
 We can see from the Figure \ref{7} that the status of the system can be divided into three parts: waiting for login/register, waiting for ordering and ordered. And the system will be continuing waiting until it is activated with order information. It processes the order, returnes the payment information and continues its waiting.
 \begin{figure}
   \centering
-  \includegraphics[scale=0.38]{statusDiagram.pdf}
+  \includegraphics[width=12cm]{statusDiagram.pdf}
   \caption{UML Status Diagram}\label{7}
 \end{figure}
 % Huang 2019-06-23 above
@@ -763,15 +764,19 @@ The process of the order is confirmed and remain the same as the previous lab re
 \hline 
 Modifier&Modify Time&Approver&Commit Message\\
 \hline  
-Huang, Jiani&Jun 14, 2019&All&feat add the tea and coffee discount to combinationDiscount Strategy\\
+Huang, Jiani&Jun 14, 2019&All&feat Add the tea and coffee discount \\
+&&&to combinationDiscount Strategy\\
 \hline
-Huang, Jiani&Jun 14, 2019&All&feat change the test file for combination discount strategy\\
+Huang, Jiani&Jun 14, 2019&All&feat Change the test file for \\
+&&&combination discount strategy\\
 \hline
-Huang, Jiani&Jun 14, 2019&All&feat add the country America\\
+Huang, Jiani&Jun 14, 2019&All&feat Add the country America\\
 \hline
-Huang, Jiani&Jun 14, 2019&All&feat revise the usd menu for the two new drinks\\
+Huang, Jiani&Jun 14, 2019&All&feat Revise the usd menu for the two \\
+&&&new drinks\\
 \hline
-Liu, Jiaxing&Jun 23, 2019&All&feat add two log files and correct the double eleven strategy\\
+Liu, Jiaxing&Jun 23, 2019&All&feat Add two log files and correct the \\
+&&&double eleven strategy\\
 \hline
 \end{tabular}
 
