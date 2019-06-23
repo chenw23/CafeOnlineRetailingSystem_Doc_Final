@@ -751,10 +751,32 @@ The process of the order is confirmed and remain the same as the previous lab re
 \item ``Give a corresponding map and explanation for each demand"
 \end{enumerate}
 \section{Code change logs in response of new demands}
+\subsection{Aspects for code change}
+\begin{enumerate}
+\item \textbf{Currency change: } According to the requirement revision, we add the USD currency menu and corresponding order tests.
+\item \textbf{Login change: } To enhance the user-friendliness, we dispatch the runtime exception of login failure, record the possible errors in log files and provide the reentry chance for users.
+\item \textbf{Log information files: } For consistency, we record all the log information related to ordering in the log files (error.log and trace.log under the logs directory) through the function of Logger.
+\item \textbf{Sales strategy change: } We change the level and kind of the sales strategies according to the requirement alternation, and add the relative tests.
+\end{enumerate}
+\subsection{Revision history of the code}
+\begin{tabular}{|c|c|c|l|}
+\hline 
+Modifier&Modify Time&Approver&Commit Message\\
+\hline  
+Huang, Jiani&Jun 14, 2019&All&feat add the tea and coffee discount to combinationDiscount Strategy\\
+\hline
+Huang, Jiani&Jun 14, 2019&All&feat change the test file for combination discount strategy\\
+\hline
+Huang, Jiani&Jun 14, 2019&All&feat add the country America\\
+\hline
+Huang, Jiani&Jun 14, 2019&All&feat revise the usd menu for the two new drinks\\
+\hline
+Liu, Jiaxing&Jun 23, 2019&All&feat add two log files and correct the double eleven strategy\\
+\hline
+\end{tabular}
+
 
 \begin{thebibliography}{A}
-
-
 \bibitem{1}
 Wikipedia contributors. (2019, March 22). JUnit. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 14:53, April 1, 2019, from \url{https://en.wikipedia.org/w/index.php?title=JUnit&oldid=888928403}
 \end{thebibliography}
