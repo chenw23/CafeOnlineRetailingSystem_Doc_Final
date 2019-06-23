@@ -376,7 +376,7 @@ According to the interview record of the lab assigner, the whole system should s
 \item Anyone except shop assistants is unauthorized to the administration access.
 \item The shop assistant will log in successfully if and only if the username and password are matched.
 \item The login status will be recorded after the shop assistant logs in successfully.
-\item If the shop assistant fails to log in, the system will throw a runtime exception to prompt the failed login.
+\item If the shop assistant fails to log in, the system will record the failed login and launch the next login.
 \item If the shop assistant fails to log in because of wrong password, the system will prompt \textbf{Username or password error};
 \item If the shop assistant fails to log in, he will not allowed to conduct any other operations.
 \end{enumerate}
@@ -389,15 +389,15 @@ According to the interview record of the lab assigner, the whole system should s
 
 \subsection{Obtaining beverage descriptions}
 \begin{enumerate}
-\item The shop assistant can obtain and check different descriptions of beverages.
-\item The customer can obtain and check different descriptions of beverages.
+\item The shop assistant can obtain and check different descriptions of beverages after ordering.
+\item The customer can obtain and check different descriptions of beverages after ordering.
 \end{enumerate}
 
 \subsection{Order charge calculation}
 \begin{enumerate}
 \item The shop assistant can order according to the verbal instructions of the customer.
-\item The shop assistant can calculate the order charge including the original price, discount and the total discount charge.
-\item The customer can check the order charge including the original price, discount and the total discount charge.
+\item The shop assistant can calculate the order charge including the original price, discount and the total discount charge in the process of ordering.
+\item The customer can check the order charge including the original price, discount and the total discount charge showed on the receipt after the salesperson has ordered.
 \end{enumerate}
 
 \subsection{Beverage supported}
@@ -571,13 +571,14 @@ As the UML diagram shows, the relationships in this system can be divided into t
 \subsection{Data Flow analysis and modeling}
 We apply the DFD(data flow diagram) to describe the flow of the input data and output data.
 We 
-\subsubsection{level 0:} The top/level-0 diagram is an overall description of the whole system. The external entity are only control panel and control panel display. The data flow diagram for level 0 is shown as Figure \ref{5}.
+\subsubsection{level 0:} The top/level-0 diagram is an overall description of the whole system. The external entity are only control panel and control panel display. The data flow diagram for level 0 is shown as Figure \ref{5}. We can see what our system does is to process the order information and produce the corresponding payment information.
 \begin{figure}
   \centering
   \includegraphics[scale=0.38]{DataFlowLevel0.pdf}
   \caption{Data Flow Level 0 Diagram}\label{5}
 \end{figure}
 \subsubsection{level 1:}
+We can see a more detailed description of the whole process from the level-1 diagram in Figure \ref{6}. The order information flows from price-counting, sales-plan choosing and finally changes into payment information and shows in the control panel display.
 \begin{figure}
   \centering
   \includegraphics[scale=0.38]{DataFlowLevel1.pdf}
@@ -587,12 +588,13 @@ We
 \subsection{Behavior analysis and modeling}
 In this part, we apply the UML status diagram to conduct the behavior analysis and modeling.
 \subsubsection{Whole status transfer}
+We can see from the Figure \ref{7} that the status of the system can be divided into three parts: waiting for login/register, waiting for ordering and ordered. And the system will be continuing waiting until it is activated with order information. It processes the order, returnes the payment information and continues its waiting.
 \begin{figure}
   \centering
   \includegraphics[scale=0.38]{statusDiagram.pdf}
   \caption{UML Status Diagram}\label{7}
 \end{figure}
-% Huang 2019-06-19 above
+% Huang 2019-06-23 above
 \chapter{Performance Demands}
 
 \section{Massive end user support}
